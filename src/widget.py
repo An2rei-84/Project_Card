@@ -1,8 +1,14 @@
 import masks
 
+def mask_account_card(args: str) -> str:
+    data_account = str(args)
+    if "Счет" in data_account:
+        return f"Счет {masks.get_mask_account(args)}"
+    else:
+        data_card = data_account.replace(data_account[-16:],"")
+        return f"{data_card[0:]}{masks.mask_card_number(args[-16:])}"
 
-def mask_account_card():
-    pass
+print(mask_account_card('Visa Platinum 7000 7922 8960 6361'))
 
 
 
@@ -11,4 +17,5 @@ def get_data(arg: str) -> str:
     return f"{data_[8:10]}.{data_[5:7]}.{data_[:4]}"
 
 
-print(get_data('2018-07-11T02:26:18.671407'))
+
+

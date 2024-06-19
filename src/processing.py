@@ -1,5 +1,3 @@
-
-
 def filter_by_state(dicts_list: list, state="EXECUTED") -> list:
     """Функция возвращает новый список, содержащий только те словари,
     у которых ключ 'state'
@@ -8,8 +6,8 @@ def filter_by_state(dicts_list: list, state="EXECUTED") -> list:
     return filtered_list
 
 
-def sort_by_date(transaction_info: list, is_date=True) -> list:
+def sort_by_date(transaction_info: list, is_date: bool = True) -> list:
     """Функция сортировки списка словарей по дате"""
-    if is_date == "True":
+    if is_date is True:
         return sorted(transaction_info, key=lambda x: x["date"], reverse=True)
     return sorted(transaction_info, key=lambda x: x["date"], reverse=False)

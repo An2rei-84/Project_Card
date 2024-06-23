@@ -1,4 +1,4 @@
-from src.masks import mask_card_number, get_mask_account
+from src.masks import get_mask_card_number, get_mask_account
 
 
 def mask_account_card(args: str) -> str:
@@ -9,7 +9,7 @@ def mask_account_card(args: str) -> str:
         return f"Счет {get_mask_account(new_number)}"
     else:
         data_card = data_account.replace(data_account[-16:], "")
-        return f"{data_card[0:]}{mask_card_number(new_number)}"
+        return f"{data_card[0:]}{get_mask_card_number(new_number)}"
 
 
 def get_data(args: str) -> str:

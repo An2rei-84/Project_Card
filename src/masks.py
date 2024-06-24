@@ -1,4 +1,4 @@
-def mask_card_number(card_number: int) -> str:
+def get_mask_card_number(card_number: int) -> str:
     """Функция маскировки номера карты"""
     card = str(card_number)
     return f"{card[:4]} {card[4:6]}** **** {card[-4:]}"

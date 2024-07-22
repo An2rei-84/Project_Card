@@ -2,16 +2,15 @@ import pandas as pd
 
 
 def reading_csv_file(path):
-    """Функция чтения данных из фала формата .csv"""
-    with open(path, encoding="utf-8") as file:
-        reader = pd.read_csv(file, delimiter=';')
-    return reader
+    """The function returns a list of dictionaries from a csv file"""
+    new_list = pd.read_csv(path)
+    return new_list.to_dict(orient="records")
 
 
 def reading_exel_file(path):
-    """Функция чтения данных из файла формата .XLSX-"""
+    """The function returns a list of dictionaries from a xlsx file"""
     wine_reviews = pd.read_excel(path)
-    return wine_reviews
+    return wine_reviews.to_dict(orient="records")
 
 
 # print(reading_csv_file("../data/transactions.csv"))

@@ -3,7 +3,7 @@ import pandas as pd
 
 def reading_csv_file(path):
     """The function returns a list of dictionaries from a csv file"""
-    new_list = pd.read_csv(path)
+    new_list = pd.read_csv(path, sep=";", header=0)
     return new_list.to_dict(orient="records")
 
 

@@ -1,3 +1,6 @@
+from src.reading import reading_csv_file
+
+
 def filter_by_state(dicts_list: list, state="EXECUTED") -> list:
     """Функция возвращает новый список, содержащий только те словари,
     у которых ключ 'state'
@@ -11,3 +14,6 @@ def sort_by_date(transaction_info: list, is_date: bool = True) -> list:
     if is_date is True:
         return sorted(transaction_info, key=lambda x: x["date"], reverse=True)
     return sorted(transaction_info, key=lambda x: x["date"], reverse=False)
+
+
+# print(filter_by_state(reading_csv_file("../data/transactions.csv")))
